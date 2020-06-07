@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2017 The Dirty Unicorns Project
-
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
-
           http://www.apache.org/licenses/LICENSE-2.0
-
      Unless required by applicable law or agreed to in writing, software
      distributed under the License is distributed on an "AS IS" BASIS,
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,11 +15,11 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:id="@+id/prefCard"
     android:layout_width="match_parent"
-    android:layout_height="74dp"
+    android:layout_height="125dp"
     android:clickable="true"
     android:focusable="true"
     card_view:cardCornerRadius="@dimen/card_corner_radius"
-    card_view:cardElevation="0.0dp"
+    card_view:cardElevation="@dimen/card_elevation"
     android:layout_marginTop="@dimen/card_margin_top"
     android:layout_marginBottom="@dimen/card_margin_bottom"
     android:layout_marginRight="@dimen/card_margin_right"
@@ -30,13 +27,16 @@
     card_view:cardBackgroundColor="@android:color/transparent"
     android:foreground="?android:attr/selectableItemBackground">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/card_bg"
         android:orientation="horizontal">
 
         <LinearLayout
             android:id="@id/icon_frame"
+            android:layout_centerHorizontal="true"
             android:layout_width="74dp"
             android:layout_height="74dp">
 
@@ -52,13 +52,16 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/icon_frame"
             android:orientation="vertical">
 
             <TextView
                 android:id="@android:id/title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="2dp"
+                android:gravity="center"
                 android:textStyle="bold"
                 android:textSize="18sp"
                 android:textColor="@*android:color/accent_device_default_light"/>
@@ -68,13 +71,10 @@
                 android:id="@android:id/summary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="2dp"
+                android:gravity="center"
                 android:layout_marginEnd="2dp"
-                android:singleLine="true"
-                android:ellipsize="marquee"
-                android:marqueeRepeatLimit="marquee_forever"
-                android:scrollHorizontally="true"
                 android:textSize="12sp" />
         </LinearLayout>
-    </LinearLayout>
+    </RelativeLayout>
 </androidx.cardview.widget.CardView>
